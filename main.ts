@@ -10,6 +10,11 @@
 // Outside the grader's container, MAKEFUN_BOT_DIR and MAKEFUN_OUTPUT_DIR stand in for /bot and /output:
 //   mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 
+// Wowo's entry: the meme is the work, this program is just the courier.
+// The joke lives in the X post (a GTA "WASTED" parody: 13 years waiting,
+// called in sick for launch day) and in meme.png, composited from a
+// text-free generated scene with PIL-crisp lettering and the make.fun
+// ghost in-scene. This file only hands the post's address to the gate.
 import { copyFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
