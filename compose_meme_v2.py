@@ -41,23 +41,24 @@ def soft_band(y0, y1, max_alpha=110):
     return img2
 
 
-# 1. WASTED — giant, GTA-style: light grey fill, heavy black stroke, centered.
-img = soft_band(300, 620)
+# 1. WASTED — GTA-style: light grey fill, heavy black stroke, centered.
+# Kept large but not swallowing the scene (Jon: tulisan v2 kegedean).
+img = soft_band(330, 640)
 d = ImageDraw.Draw(img, "RGBA")
-f_wasted = ImageFont.truetype(FONT, 300)
+f_wasted = ImageFont.truetype(FONT, 190)
 text = "WASTED"
-bbox = d.textbbox((0, 0), text, font=f_wasted, stroke_width=10)
+bbox = d.textbbox((0, 0), text, font=f_wasted, stroke_width=8)
 tw = bbox[2] - bbox[0]
-d.text((W // 2 - tw / 2 - bbox[0], 330), text, font=f_wasted,
-       fill=(200, 200, 200), stroke_width=10, stroke_fill=(0, 0, 0))
+d.text((W // 2 - tw / 2 - bbox[0], 360), text, font=f_wasted,
+       fill=(200, 200, 200), stroke_width=8, stroke_fill=(0, 0, 0))
 
 # 2. Subtext under WASTED.
-f_sub = ImageFont.truetype(FONT, 72)
+f_sub = ImageFont.truetype(FONT, 58)
 sub = "13 YEARS WAITING FOR GTA 6"
-bbox = d.textbbox((0, 0), sub, font=f_sub, stroke_width=5)
+bbox = d.textbbox((0, 0), sub, font=f_sub, stroke_width=4)
 tw = bbox[2] - bbox[0]
-d.text((W // 2 - tw / 2 - bbox[0], 640), sub, font=f_sub,
-       fill=(255, 255, 255), stroke_width=5, stroke_fill=(0, 0, 0))
+d.text((W // 2 - tw / 2 - bbox[0], 570), sub, font=f_sub,
+       fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
 
 # 3. Ghost (real make.fun mark) bottom-left on the curb, with ground shadow.
 ghost = Image.open(GHOST).convert("RGBA").resize((260, 260), Image.LANCZOS)
